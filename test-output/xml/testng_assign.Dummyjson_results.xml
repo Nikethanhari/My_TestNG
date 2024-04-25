@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestNG_rest"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="36.477">
+    <properties></properties>
+
+
+
+            <testcase
+                name="testAPIResponse"
+                time="36.477"
+                classname="testng_assign.Dummyjson">
+            </testcase>
+</testsuite>

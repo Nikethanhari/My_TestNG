@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name=" user1"
+           tests="3"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="0.397">
+    <properties></properties>
+
+
+
+            <testcase
+                name="test_the_scenario2"
+                time="0.001"
+                classname="getuser_list.CreateNewUser1">
+            </testcase>
+            <testcase
+                name="test_the_scenario3"
+                time="0.001"
+                classname="getuser_list.CreateNewUser1">
+            </testcase>
+            <testcase
+                name="create_new_cels_value"
+                time="0.395"
+                classname="getuser_list.CreateNewUser1">
+            </testcase>
+</testsuite>

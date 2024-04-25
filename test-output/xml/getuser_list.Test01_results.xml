@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestNG_rest"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="4.572">
+    <properties></properties>
+
+
+
+            <testcase
+                name="validatewith_contain_soap"
+                time="4.572"
+                classname="getuser_list.Test01">
+            </testcase>
+</testsuite>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Create User Details"
+           tests="5"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="4.195">
+    <properties></properties>
+
+
+
+            <testcase
+                name="create_new_cels_value"
+                time="1.848"
+                classname="getuser_list.CreateNewUser">
+            </testcase>
+            <testcase
+                name="test_the_scenario1"
+                time="0.001"
+                classname="getuser_list.CreateNewUser">
+            </testcase>
+            <testcase
+                name="test_the_scenario3"
+                time="0.000"
+                classname="getuser_list.CreateNewUser">
+            </testcase>
+            <testcase
+                name="test_the_scenario2"
+                time="0.001"
+                classname="getuser_list.CreateNewUser">
+            </testcase>
+            <testcase
+                name="create_new_user"
+                time="2.345"
+                classname="getuser_list.CreateNewUser">
+            </testcase>
+</testsuite>
