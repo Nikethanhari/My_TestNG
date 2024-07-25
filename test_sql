@@ -1,0 +1,63 @@
+CREATE TABLE tab1 (
+    Cl1 CHAR(1),
+    Cl2 CHAR(2),
+    Cl3 CHAR(1)
+);
+
+-- Inserting data into tab1
+INSERT INTO tab1 (Cl1, Cl2, Cl3) VALUES
+('A', 'AB', 'C'),
+('A', 'A', 'B'),
+('B', 'A', 'C'),
+('A', 'A', 'B');
+
+
+
+CREATE TABLE tab2 (
+    Cl1 CHAR(1),
+    Cl2 CHAR(1),
+    Cl3 CHAR(1)
+);
+
+-- Inserting data into tab2
+INSERT INTO tab2 (Cl1, Cl2, Cl3) VALUES
+('A', 'A', 'B'),
+('B', 'A', 'C');
+
+
+
+=========================================
+
+
+
+
+
+
+
+INSERT INTO Borrowings (ID, BookName, DueDate, ReturnDate)
+VALUES
+    (121, 'Show Boat', '2022-01-06', '2022-01-07'),
+    (123, 'Broken Ties', '2022-06-23', '2022-07-01'),
+    (342, 'Show Boat', '2022-07-04', '2022-07-01'),
+    (121, 'Shivers', '2022-06-15', '2022-06-14'),
+    (231, 'Wolf Totem', '2022-07-23', NULL),
+    (342, 'Zorba the Greek', '2022-08-05', NULL);
+	
+	
+	 CREATE TABLE Borrowings (
+    ID INT,
+    BookName VARCHAR(100),
+    DueDate DATE,
+    ReturnDate DATe
+);
+
+
+create table person (name char(20),id number(10));
+
+
+INSERT INTO person(name,id)
+VALUES
+    ('Praveen',123 ),
+    (,kumar',231 ),
+    ('sundara',342 ),
+    ('chakara',121 );
