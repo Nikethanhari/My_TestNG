@@ -61,4 +61,16 @@ select p1,ro1, val,v2 , dense_rank() over (order by v2 desc ) rm from emp where 
 
 
 ==================================================================================================
+Given three tables: employees, departments, and salaries, write a query to find the department with the highest average salary and the number of employees in that department.
+emp(emp_id,name, dept_id)
+dept(dept_id,dept_name)
+salary(emp_id,salary)
+
+hi avg 
+
+id sal
+
+select * from (
+select a.emp_id, a.name , a.deptid  , b.dept_name , c.salary, dense_rank() over (partion by b.dept_name order by  c.salary desc )as rn from emp a , dept b 
+, salary c   on a.dept_id= b.dept_id  and  a.emp_id =c.emp_id) where rn=1 );
 
