@@ -1,0 +1,64 @@
+SELECT ( (COUNT(Value)+1) * (COUNT(Value)+2) / 2) - SUM(Value) AS Missing FROM MissingNumber
+
+=================================================================================
+Count of occurence 
+
+select id,name,len(name)-len(replace(name,'N','')) from table_name 
+=================================================================================
+running total 
+
+SELECT 
+    SaleDate,
+    Amount,
+    SUM(Amount) OVER (ORDER BY SaleDate) AS RunningTotal
+FROM 
+    Sales
+ORDER BY 
+    SaleDate;
+===============================================================================================
+
+The provided SQL query is designed to count individual characters from a column of text. Here's the query:
+
+sql
+
+WITH CharacterCTE AS (
+    SELECT SUBSTRING(TextColumn FROM generate_series(1, LENGTH(TextColumn))) AS Character
+    FROM TextData
+)
+SELECT Character, COUNT(*) AS Count
+FROM CharacterCTE
+GROUP BY Character
+ORDER BY Character;
+
+
+=========================================================================================================================================
+SELECT *
+FROM contacts
+WHERE LENGTH(phone_number) = 10
+  AND REGEXP_LIKE(phone_number, '^[0-9]{10}$');
+
+  ============================================================================================================================
+Requirement: I want you to fetch the pk_hash_val, Row_hash_val fields based on the latest (highest) entries
+ of valid_frm_dt & valid_to_dt fields from the given data.
+
+Table: Employee
+
+pk_hash_val	     Row_hash_val		valid_frm_dt	valid_to_dt
+167d42e5-c07b	ddc19462-08b1-a099	01-01-1900		11-11-2021
+167d42e5-c07b	ddc19462-08b1-a100	11-11-2021		25-07-2023
+167d42e5-c07b	ddc19462-08b1-a102	26-07-2023		31-12-2050
+167d42e5-c07b	ddc19462-08b1-a101	25-07-2023		26-07-2023
+267d42e5-c100	edc19462-08b1-a101	25-07-2023		31-12-2050
+267d42e5-c100	edc19462-08b1-a100	01-01-1900		25-07-2023
+
+
+167d42e5-c07b	ddc19462-08b1-a102	26-07-2023		31-12-2050
+
+267d42e5-c100	edc19462-08b1-a101	25-07-2023		31-12-2050
+
+
+select p1,ro1, val,v2 , dense_rank() over (order by v2 desc ) rm from emp where rm =1 
+
+
+==================================================================================================
+
