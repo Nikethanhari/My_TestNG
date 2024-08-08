@@ -1,0 +1,113 @@
+import pandas as pd
+import numpy as np
+
+# Example data (replace with your actual data or source)
+data = {
+    'id': [1, 2, 3, 4, 5],
+    'name': ['Alice', 'Bob', 'Charlie', 'David', None],
+    'age': [25, 30, 35, None, 40],
+    'city': ['New York', 'Los Angeles', 'Chicago', 'Boston', 'Miami']
+}
+
+df = pd.DataFrame(data)
+
+# Function to perform ETL checks
+def perform_etl_checks(df):
+    # Check for duplicates
+    if df.duplicated().any():
+        print("Duplicates found in the dataset.")
+        # Optionally, print or handle duplicates
+
+    # Check for null values
+    null_counts = df.isnull().sum()
+    if null_counts.any():
+        print("Null values found in the dataset:")
+        print(null_counts)
+        # Optionally, handle or log null values
+
+    # Check length and data type (example checks for specific columns)
+    column_checks = {
+        'id': {'dtype': np.int64, 'min_length': 1},
+        'name': {'dtype': object, 'min_length': 2},
+        'age': {'dtype': np.float64, 'min_length': 1}
+    }
+
+    for column, checks in column_checks.items():
+        if df[column].dtype != checks['dtype']:
+            print(f"Column '{column}' has incorrect data type. Expected {checks['dtype']}, got {df[column].dtype}.")
+            # Optionally, handle or log data type mismatch
+
+        if any(df[column].astype(str).str.len() < checks['min_length']):
+            print(f"Column '{column}' has values shorter than minimum length {checks['min_length']}.")
+            # Optionally, handle or log length issues
+
+    # Check transformation logic and data quality (example)
+    # Example: Check if 'age' is non-negative
+    if (df['age'] < 0).any():
+        print("Found negative age values, which is invalid.")
+        # Optionally, handle or log invalid data
+    
+    # Check data completeness
+    total_rows = df.shape[0]
+    expected_rows = 5  # Replace with the expected number of rows
+    if total_rows != expected_rows:
+        print(f"Data completeness issue: Expected {expected_rows} rows, found {total_rows}.")
+        # Optionally, handle or log incomplete data
+
+    # Add more specific checks as needed
+
+# Run ETL checks
+perform_etl_checks(df)
+
+
+
+
+
+======================================================================================================================================
+
+
+
+import pandas as pd
+
+# Function to perform source to target flat file validation
+def validate_source_to_target(source_file, target_file):
+    # Read source and target files into pandas DataFrames
+    df_source = pd.read_csv(source_file)
+    df_target = pd.read_csv(target_file)
+
+    # Compare number of rows
+    if df_source.shape[0] != df_target.shape[0]:
+        print(f"Number of rows differ between source ({df_source.shape[0]}) and target ({df_target.shape[0]})")
+        # Optionally, log or handle this discrepancy
+
+    # Compare number of columns
+    if df_source.shape[1] != df_target.shape[1]:
+        print(f"Number of columns differ between source ({df_source.shape[1]}) and target ({df_target.shape[1]})")
+        # Optionally, log or handle this discrepancy
+
+    # Compare column names
+    if list(df_source.columns) != list(df_target.columns):
+        print("Column names differ between source and target files")
+        # Optionally, log or handle this discrepancy
+
+    # Compare data values
+    for column in df_source.columns:
+        if not df_source[column].equals(df_target[column]):
+            print(f"Data mismatch found in column '{column}'")
+            # Optionally, log or handle this discrepancy
+
+    # Optionally, perform additional checks (e.g., null values, data types, etc.)
+
+# Example usage
+source_file = 'source_file.csv'
+target_file = 'target_file.csv'
+
+validate_source_to_target(source_file, target_file)
+
+============================================================================================================================================
+
+
+
+
+
+
